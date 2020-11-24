@@ -1,5 +1,6 @@
 package com.c1.l3finalreview.jdnd.model;
 
+
 public class ChatMessage {
     private String username;
     private String message;

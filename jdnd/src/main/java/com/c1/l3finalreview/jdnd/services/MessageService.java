@@ -8,21 +8,20 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class MessageService {
-    private List<ChatMessage> chatMessage;
+    private List<ChatMessage> chatMessages;
+
+
 
     @PostConstruct
-    public void postConstruct(){
-        System.out.println("Cerating msg service");
-        this.chatMessage = new ArrayList<>();
+    public void postConstruct() {
+        System.out.println("Creating MessageService bean");
+        this.chatMessages = new ArrayList<>();
     }
 
-    public List<ChatMessage> getChatMessage() {
-        return chatMessage;
-    }
-    public void addMessage(ChatForm chatForm){
-
+    public void addMessage(ChatForm chatForm) {
         ChatMessage newMessage = new ChatMessage();
         newMessage.setUsername(chatForm.getUsername());
         switch (chatForm.getMessageType()) {
@@ -36,9 +35,10 @@ public class MessageService {
                 newMessage.setMessage(chatForm.getMessageText().toLowerCase());
                 break;
         }
-        this.chatMessage.add(newMessage);
+        this.chatMessages.add(newMessage);
     }
 
+    public List<ChatMessage> getChatMessages() {
+        return chatMessages;
     }
-
-
+}

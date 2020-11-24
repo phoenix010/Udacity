@@ -1,9 +1,9 @@
 package com.c1.l3finalreview.jdnd.model;
 
 public class ChatForm {
-    String username;
-    String messageText;
-    String messageType;
+    private String username;
+    private String messageText;
+    private String messageType;
 
     public String getUsername() {
         return username;
